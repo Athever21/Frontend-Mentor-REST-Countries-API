@@ -1,27 +1,122 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
 @import "./Vars.scss";
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
-  color: $font;
+  font-family: 'Nunito Sans', sans-serif;
   outline: none;
 }
 
-#root {
-  div {
-    background: $background;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
-    h1 {
-      font-size: 10rem;
-      color: $pallet1;
-    }
+#root {
+  background: $very-dark-blue;
+  min-height: 100vh;
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 1;  /* Remove scrollbar space */
+  background: $dark-blue;  /* Optional: just make scrollbar invisible */
+}
+
+::-webkit-scrollbar-thumb {
+  background: lighten($dark-blue,20);
+}
+
+.dark-background {
+  background: $very-dark-blue !important;
+  color: $white;
+}
+
+.light-background {
+  background: $very-light-gray !important;
+  color: $light-dark-blue;
+}
+
+.dark-element {
+  background: $dark-blue;
+}
+
+.light-input {
+  color: $dark-blue;
+  background: $white !important;
+
+  &::placeholder {
+    color: $dark-blue !important;
+  }
+}
+
+.dark-button {
+  color: $white;
+  background: $dark-blue !important;
+  border: 1px solid darken($dark-blue, 5);
+
+  &:hover {
+    background: lighten($dark-blue, 5) !important;
+  }
+}
+
+.light-button {
+  color: $dark-blue;
+  border: 1px solid $dark-gray;
+
+  &:hover {
+    background: lighten($very-light-gray, 5);
+  }
+}
+
+.light-element {
+  background: $white;
+}
+
+.dark-input {
+  color: $white;
+  background: $dark-blue !important;
+}
+
+.container-lds {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

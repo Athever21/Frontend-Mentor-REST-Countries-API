@@ -11,9 +11,9 @@ module.exports = {
     path.join(cwd, "client", "index.tsx"),
   ],
   output: {
-    path: path.join(cwd, "build"),
+    path: path.join(cwd, "public"),
     filename: "dist.js",
-    publicPath: "/build/",
+    publicPath: "/public/",
   },
   module: {
     rules: [

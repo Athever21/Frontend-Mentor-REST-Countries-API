@@ -3,5 +3,5 @@
   "watch": ["./server"],
   "ext": "ts,js",
   "delay": "2000",
-  "exec": "webpack --config webpack.server.js && node ./build/server.js"
+  "exec": "webpack --config webpack.server.js && node ./public/server.js"
 }

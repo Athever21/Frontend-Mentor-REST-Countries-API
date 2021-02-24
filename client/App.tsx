@@ -1,11 +1,20 @@
-import React from "react";
+import React, {lazy, Suspense, useState} from "react";
 import {hot} from "react-hot-loader";
 import "./App.scss";
 
+import Loading from "./Loading";
+const Header = lazy(() => import("./components/header/Header"));
+const Main = lazy(() => import("./components/main/Main"));
+
 const App = () => {
+  const [mode,setMode] = useState("dark");
+
   return(
     <div>
-      <h1>Hello World!</h1>
+      <Suspense fallback={<Loading />}>
+        <Header m={{mode,setMode}}/>
+        <Main m={mode}/>
+      </Suspense>
     </div>
   )
 }

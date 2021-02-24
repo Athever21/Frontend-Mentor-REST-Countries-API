@@ -1,3 +1,21 @@
-$font: #dfdfdf;
-$background: #333333;
-$pallet1: #643173;
+//dark mode elements 
+$dark-blue: hsl(209,23%,22%);
+//dark mode background
+$very-dark-blue: hsl(207, 26%, 17%);
+//light mode text
+$light-dark-blue: hsl(200,15%,8%);
+//light mode input 
+$dark-gray: hsl(0, 0%, 52%);
+// light mode background
+$very-light-gray: hsl(0, 0%, 98%);
+//dark mode text & light mode elements
+$white: hsl(0, 0%, 100%);
+
+@mixin button() {
+  padding: 0.5rem;
+  border-radius: 5px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
